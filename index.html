@@ -3,134 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jayadevan Score Calculator</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom right, #ffcccb, #b0e0e6);
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        .calculator {
-            background-color: rgba(255, 255, 255, 0.8);
-            max-width: 400px;
-            margin: 0 auto;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            text-align: center;
-            color: #8a2be2;
-            background-color: #fffacd;
-            padding: 10px;
-            border-radius: 5px;
-            margin-top: 0;
-        }
-        .section {
-            margin-bottom: 20px;
-            padding: 15px;
-            border-radius: 5px;
-        }
-        .match-format { background-color: #e6ffe6; }
-        .team1 { background-color: #e6f2ff; }
-        .team2 { background-color: #ffe6e6; }
-        .updated-target { background-color: #f2e6ff; }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        input, select {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
-            background-color: rgba(255, 255, 255, 0.5);
-        }
-        select {
-            appearance: none;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
-            background-repeat: no-repeat;
-            background-position-x: 98%;
-            background-position-y: 50%;
-        }
-        input:focus, select:focus {
-            outline: none;
-            border-color: #4a90e2;
-        }
-        input[readonly] {
-            background-color: #f0f0f0;
-        }
-    </style>
+    <title>Jayadevan Score Calculator for T20 Cricket</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="calculator">
-        <h1>Jayadevan Score Calculator</h1>
-        
-        <div class="section match-format">
-            <h2>Match Format</h2>
-            <label for="max-overs">Maximum overs:</label>
-            <input type="number" id="max-overs" placeholder="Enter maximum overs">
-            
-            <label for="interruption-type">Interruption type:</label>
-            <select id="interruption-type">
-                <option value="">Select interruption type</option>
-                <option value="rain">Rain</option>
-                <option value="badLight">Bad Light</option>
-                <option value="other">Other</option>
-            </select>
-        </div>
-        
-        <div class="section team1">
-            <h2>Team 1</h2>
-            <label for="team1-score">Team 1 score:</label>
-            <input type="number" id="team1-score" placeholder="Enter team 1 score">
-        </div>
-        
-        <div class="section team2">
-            <h2>Team 2</h2>
-            <label for="team2-score">Team 2 score:</label>
-            <input type="number" id="team2-score" placeholder="Enter team 2 score">
-        </div>
-        
-        <div class="section updated-target">
-            <h2>Updated Target</h2>
-            <label for="updated-target">Updated target score:</label>
-            <input type="number" id="updated-target" placeholder="Updated target will appear here" readonly>
+        <h1>Jayadevan Score Calculator for T20 Cricket</h1>
+        <h2 style="text-align: center;">Interruption Type</h2>
+        <div class="button-group">
+            <button onclick="window.location.href='caseA.html'" style="text-align: center;">The interruption is after team-1 has completed its innings and before team-2 begins its innings</button>
+            <button onclick="window.location.href='caseB.html'" style="text-align: center;">The interruption comes after team-2 has batted through some overs in its innings</button>
         </div>
     </div>
 
-    <script>
-        // Get all input elements
-        const maxOvers = document.getElementById('max-overs');
-        const interruptionType = document.getElementById('interruption-type');
-        const team1Score = document.getElementById('team1-score');
-        const team2Score = document.getElementById('team2-score');
-        const updatedTarget = document.getElementById('updated-target');
-
-        // Add event listeners to all inputs
-        [maxOvers, interruptionType, team1Score, team2Score].forEach(input => {
-            input.addEventListener('input', calculateTarget);
-        });
-
-        function calculateTarget() {
-            // This is a placeholder for the actual Jayadevan calculation
-            // You would need to implement the real algorithm here
-            const target = parseInt(team1Score.value) + 1;
-            
-            if (!isNaN(target)) {
-                updatedTarget.value = target;
-            } else {
-                updatedTarget.value = '';
-            }
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
